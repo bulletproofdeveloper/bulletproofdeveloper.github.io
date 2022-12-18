@@ -1,1 +1,964 @@
-<h1>About page</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<style>
+		html {
+		    margin: 0;
+		    padding: 0;
+		}
+
+		body {
+		    text-align: center;
+		    font-family: Roboto;
+		    font-size: 16px;
+		    line-height: 24px;
+		    font-weight: 400;
+		    color: #202124;
+		    margin: 0px;
+		}
+
+		form {
+		    margin: 0px;
+		    padding: 0px;
+		}
+
+		a {
+		    text-decoration: none;
+		    color: #2E6EF5;
+		    padding: 0px;
+		    margin: 0px;
+		}
+
+		a:hover {
+		    text-decoration: underline;
+		}
+
+		button {
+		    display: inherit;
+		    border: inherit;
+		}
+
+		.no-mp {
+		    margin: 0px;
+		    padding: 0px;
+		}
+
+		.pull-left {
+		    float: left;
+		}
+
+		.pull-right {
+		    float: right;
+		}
+
+		.button-block {
+		    background: #F8D481;
+		    display: block;
+		    color: #202124;
+		    text-align: center;
+		    margin: 5px 16px;
+		    border-radius: 5px;
+		    font-weight: 700;
+		    padding: 12px;
+		    font-size: 16px;
+		    cursor: pointer;
+		}
+
+		button.button-block {
+		    margin: 0px auto;
+		    width: calc(100% - 30px);
+		    height: 48px;
+		}
+
+		input {
+		    color: #202124;
+		}
+
+		input:focus {
+		    border: 1px solid #2E6EF5 !important;
+		    outline: 0px;
+		}
+
+		input::placeholder {
+		    color: #909090 !important;
+		}
+
+		.button-block:hover {
+		    text-decoration: none !important;
+		    background-color: #ECD188;
+		}
+
+		h1 {
+		    font-size: 23px;
+		    line-height: 150%;
+		    font-weight: bold;
+		    margin-bottom: 8px;
+		    margin-top: 8px;
+		    text-transform: lowercase;
+		}
+
+		h1::first-letter {
+		    text-transform: uppercase;
+		}
+
+		/* p{
+		     text-align: justify; 
+		} */
+
+		.text-left {
+		    text-align: left;
+		}
+
+		.text-right {
+		    text-align: right;
+		}
+
+		.text-center {
+		    text-align: center;
+		}
+
+		.team-box {
+		    display: flex;
+		    flex-direction: row;
+		    gap: 10px;
+		    padding-bottom: 24px;
+		}
+
+		.team-photo {
+		    width: 100px;
+		    height: 100px;
+		    border-radius: 50px;
+		}
+
+		.team-name {
+		    display: block;
+		    font-size: 16px;
+		    font-weight: 700;
+		    margin: 0px;
+		    line-height: 18px;
+		}
+
+		.team-title {
+		    display: block;
+		    line-height: 18px;
+		    margin-bottom: 6px;
+		    margin-top: 8px;
+		}
+
+		.team-desc {
+		    font-size: 14px;
+		    font-weight: 400;
+		    font-style: italic;
+		    color: #909090;
+		    line-height: 20px;
+		    display: inline-block;
+		}
+
+		._above {
+		    display: none !important;
+		}
+
+		._has_error {
+		    outline-color: #E74C3C !important;
+		    border-color: #E74C3C !important;
+		}
+
+		._has_no_error {
+		    outline-color: #009E5D !important;
+		    border-color: #009E5D !important;
+		}
+
+		.sam-ovens {
+		    display: block;
+		    width: 120px;
+		    height: 120px;
+		    margin: 58px auto 32px;
+		}
+
+		.consulting-logo {
+		    display: block;
+		    width: 201px;
+		    height: 40px;
+		    margin: 65px auto;
+		}
+
+		.skool-logo {
+		    display: block;
+		    width: 118px;
+		    height: 40px;
+		    margin: 65px auto;
+		}
+
+		.blog-item {
+		    margin-bottom: 56px;
+		    text-align: left;
+		}
+
+		.blog-item img {
+		    display: inline-block;
+		    width: 250px;
+		    height: 137px;
+		    border: 1px solid #202124;
+		}
+
+		.blog-title {
+		    display: block;
+		    font-size: 23px;
+		    font-weight: 700;
+		    color: #2E6EF5;
+		    margin-bottom: 16px;
+		}
+
+		.blog-post-title {
+		    font-size: 39px;
+		    font-weight: 700;
+		    margin-top: 46px;
+		    line-height: 59px;
+		}
+
+		.youtube-container {
+		    margin: 56px auto;
+		    display: flex;
+		    align-items: stretch;
+		}
+
+		.promotion {
+		    margin-right: -16px;
+		    margin-left: -16px;
+		}
+
+		.promotion-title {
+		    font-size: 23px;
+		    line-height: 35px;
+		    font-weight: 700;
+		    margin-bottom: 16px;
+		}
+
+		.transcription-container {
+		    margin-right: -16px;
+		    margin-left: -16px;
+		}
+
+		.transcription {
+		    font-size: 14px;
+		    white-space: pre-wrap;
+		    overflow-y: hidden;
+		    text-overflow: ellipsis;
+		    margin-bottom: 36px;
+		}
+
+		.transcription::-webkit-scrollbar {
+		    width: 4px;
+		}
+
+		.read-more-btn {
+		    background: #F8D481;
+		    padding: 12px 32px;
+		    font-weight: 700;
+		    border-radius: 4px;
+		    color: black;
+		}
+
+		.pagination {
+		    display: flex;
+		    flex-direction: row;
+		    justify-content: space-between;
+		    list-style: none;
+		}
+
+		@media only screen and (min-width:769px) {
+
+		    .well {
+		        background: #F8F7F5;
+		        padding: 24px;
+		        border: 1px solid #e4e4e4;
+		    }
+
+		    .promotion {
+		        /* width:698px; */
+		        margin-left: auto;
+		        margin-right: auto;
+		    }
+
+		    .transcription-container {
+		        /* width: 689px; */
+		        margin-right: auto;
+		        margin-left: auto;
+		    }
+
+		    .transcription {
+		        height: 273px;
+		    }
+
+		    .youtube-container {
+		        height: 391px;
+		    }
+
+		    .show-mobile {
+		        display: none !important;
+		    }
+
+		    .text-container {
+		        width: 698px;
+		        margin: 10px auto;
+		    }
+
+		    .logo {
+		        width: 201px;
+		        height: 40px;
+		        margin-top: -4px;
+		    }
+
+		    .container {
+		        width: 987px;
+		        margin: 0 auto;
+		    }
+
+		    header {
+		        padding-top: 64px;
+		        color: #2E6EF5;
+		        font-size: 16px;
+		        line-height: 24px;
+		    }
+
+		    header .links {
+		        /* width:187px; */
+		        height: 24px;
+		        display: inline-block;
+		        padding: 0;
+		    }
+
+		    .links .gap {
+		        width: 47px;
+		        display: inline-block;
+		    }
+
+		    main .title {
+		        font-size: 39px;
+		        line-height: 58.5px;
+		        margin: 56px auto 24px auto;
+		        font-weight: 700;
+		        width: 800px;
+		        padding: 5px;
+		    }
+
+		    main .subtitle {
+		        font-size: 18px;
+		        line-height: 27px;
+		        margin: 0 auto 56px auto;
+		        font-weight: 500;
+		        width: 698px;
+		        padding: 5px;
+		    }
+
+		    .product-box {
+		        display: inline-block;
+		        width: 333px;
+		        height: 354px;
+		        border-radius: 10px;
+		        border: 1px solid #E4E4E4;
+		        margin-right: 16px;
+		        margin-left: 16px;
+		        box-sizing: border-box;
+		        text-align: center;
+		    }
+
+
+		    .product-box .icon {
+		        /* display:block; */
+		        width: 100px;
+		        height: 100px;
+		        border-radius: 20px;
+		        margin: 32px auto;
+		        font-size: 40px;
+		        line-height: 100px;
+		        font-weight: bold;
+		        color: white;
+		    }
+
+		    .product-box .details {
+		        text-align: left;
+		        color: #202124;
+		        margin: 16px;
+		        font-size: 16px;
+		        line-height: 24px;
+		    }
+
+		    .details .title {
+		        font-size: 20px;
+		        line-height: 30px;
+		        font-weight: 700;
+		        margin: 0px;
+		        padding: 0px;
+		    }
+
+		    .details .desc {
+		        margin-top: 8px;
+		    }
+
+		    .product-box .uplevel {
+		        background-color: #E74C3C;
+		    }
+
+		    .product-box .quantum {
+		        background-color: #2E6EF5;
+		    }
+
+		    .newsletter {
+		        width: 396px !important;
+		        min-height: 216px !important;
+		        height: fit-content;
+		    }
+
+
+		    .newsletter input {
+		        width: calc(100% - 60px);
+		        border-radius: 4px;
+		        border: 1px solid #E4E4E4;
+		        display: block;
+		        margin: 16px 16px;
+		        padding: 14px 14px;
+		        font-size: 16px;
+		        line-height: 24px;
+		    }
+
+		    .newsletter-done {
+		        width: 364px !important;
+		        margin-right: auto;
+		        margin-left: auto;
+		    }
+
+		    .column-box {
+		        display: flex;
+		        width: 100%;
+		        height: 96px;
+		        flex-direction: column;
+		        flex-wrap: wrap;
+		    }
+
+		    .column-box>* {
+		        width: 50%;
+		        line-height: 32px;
+		    }
+
+		    .row-box {
+		        display: flex;
+		        width: 100%;
+		        flex-direction: row;
+		        flex-wrap: wrap;
+		    }
+
+		    .row-box>div {
+		        width: 50%;
+		        line-height: 32px;
+		    }
+
+		    .uplevel-hero {
+		        width: 900px;
+		        margin-bottom: 48px;
+		    }
+
+		    .uplevel-member {
+		        width: 769px;
+		        margin-bottom: 16px;
+		        border: 2px solid #202124;
+		    }
+
+		    .uplevel-member.last {
+		        margin-bottom: 48px !important;
+		    }
+
+		    .quantum-hero {
+		        width: 769px;
+		        margin-bottom: 48px;
+		        border: 2px solid #202124;
+		    }
+
+		    .quantum-member {
+		        width: 769px;
+		        border: 2px solid #202124;
+		        margin-bottom: 48px;
+		    }
+
+		    .legal-links {
+		        width: 881px;
+		        height: 24px;
+		        padding: 0;
+		        margin: 40px auto;
+		        /* margin-bottom: 30px; */
+		        display: flex;
+		        flex-direction: row;
+		        justify-content: space-between;
+		        align-content: center;
+		    }
+
+		    .links .selected,
+		    .legal-links .selected {
+		        color: #202124;
+		    }
+
+		    .coach {
+		        display: inline-block;
+		        margin-right: 56px;
+		        margin-bottom: 56px;
+		    }
+
+		    .coach.last {
+		        margin-right: 0px !important;
+		    }
+
+		    .coach img {
+		        width: 100px;
+		        height: 100px;
+		        display: block;
+		    }
+
+		    .coach .name {
+		        margin-top: 16px;
+		        font-weight: 700;
+		    }
+
+		    .blog-item {
+		        display: flex;
+		        flex-direction: row;
+		        justify-content: space-between;
+		    }
+		}
+
+		@media only screen and (max-width: 768px) {
+
+		    .well {
+		        background: #F8F7F5;
+		        padding: 17px;
+		        border: 1px solid #e4e4e4;
+		    }
+
+		    .transcription-container {
+		        padding-bottom: 20px;
+
+		    }
+
+		    .transcription {
+		        height: 144px;
+		    }
+
+		    .youtube-container {
+		        aspect-ratio: 698/391;
+		    }
+
+		    .hide-mobile {
+		        display: none !important;
+		    }
+
+		    header {
+		        color: #2E6EF5;
+		        padding-top: 24px;
+		    }
+
+		    .text-container {
+		        padding: 5px 16px;
+		        margin: 10px auto;
+		    }
+
+		    .logo {
+		        width: 159px;
+		        height: 32px;
+		        margin-bottom: 20px;
+		    }
+
+		    header .links {
+		        height: px;
+		        padding: 0;
+		    }
+
+		    header a {
+		        padding: 5px 10px;
+		    }
+
+		    main .title {
+		        font-size: 33px;
+		        line-height: 49.5px;
+		        margin: 32px auto 0px auto;
+		        font-weight: 700;
+		        /* padding:20px; */
+		        padding-bottom: 0px;
+		    }
+
+		    main .subtitle {
+		        font-size: 18px;
+		        line-height: 27px;
+		        margin: 0 auto 0px auto;
+		        font-weight: 500;
+		        padding: 15px;
+		    }
+
+		    .product-box {
+		        display: inline-block;
+		        width: 100%;
+		        height: 354px;
+		        /* border-radius: 10px; */
+		        outline: 1px solid #E4E4E4;
+		        /* margin-right:5px;
+		        margin-left:5px; */
+		        margin-bottom: 32px;
+		        box-sizing: border-box;
+		        text-align: center;
+		    }
+
+
+		    .product-box .icon {
+		        /* display:block; */
+		        width: 100px;
+		        height: 100px;
+		        border-radius: 20px;
+		        margin: 32px auto;
+		        font-size: 40px;
+		        line-height: 100px;
+		        font-weight: bold;
+		        color: white;
+		    }
+
+		    .product-box .details {
+		        text-align: left;
+		        color: #202124;
+		        margin: 16px;
+		        font-size: 16px;
+		        line-height: 24px;
+		    }
+
+		    .details .title {
+		        font-size: 20px;
+		        line-height: 30px;
+		        font-weight: 700;
+		        margin: 0px;
+		        padding: 0px;
+		    }
+
+		    .details .desc {
+		        margin-top: 8px;
+		    }
+
+		    .product-box .uplevel {
+		        background-color: #E74C3C;
+		    }
+
+		    .product-box .quantum {
+		        background-color: #2E6EF5;
+		    }
+
+		    .newsletter {
+		        margin-right: auto !important;
+		        margin-left: auto !important;
+		        width: 99% !important;
+		        height: auto !important;
+		        border: 0px !important;
+		        outline: 0px !important;
+		    }
+
+
+		    .newsletter input {
+		        width: calc(100% - 60px);
+		        /* height: 52px;                */
+		        border-radius: 4px;
+		        border: 1px solid #E4E4E4;
+		        display: block;
+		        margin: 16px 16px;
+		        padding: 14px 14px;
+		        font-size: 16px;
+		        line-height: 24px;
+		    }
+
+		    .newsletter-done {
+		        width: 85% !important;
+		        margin-right: auto;
+		        margin-left: auto;
+		    }
+
+		    .uplevel-hero {
+		        width: 90%;
+		    }
+
+		    .uplevel-member {
+		        width: 90%;
+		        margin-bottom: 10px;
+		        border: 2px solid #202124;
+		    }
+
+		    .quantum-hero {
+		        width: 90%;
+		        border: 2px solid #202124;
+		    }
+
+		    .quantum-member {
+		        width: 90%;
+		        margin-bottom: 10px;
+		        border: 2px solid #202124;
+		    }
+
+		    .legal-links {
+		        padding: 0;
+		        margin: 20px auto;
+		        /* display:flex;
+		        flex-direction: row;        
+		        flex-wrap: wrap;  
+		        gap:15px;       */
+		    }
+
+		    .legal-links a {
+		        width: fit-content;
+		        padding: 2px 15px;
+		    }
+
+		    .links .selected,
+		    .legal-links .selected {
+		        color: #202124;
+		    }
+
+		    .page-bottom-margin {
+		        margin-bottom: 100px;
+		    }
+
+		    .coach {
+		        display: block;
+		        margin-top: 24px;
+		    }
+
+		    .coach.last {
+		        margin-bottom: 32px !important;
+		    }
+
+		    .coach img {
+		        width: 100px;
+		        height: 100px;
+		        display: inline;
+		    }
+
+		    .coach .name {
+		        margin-top: 16px;
+		        font-weight: 700;
+		    }
+		}
+		</style>
+    <base href="https://www.consulting.com/www/" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Consulting.com</title>
+    <meta name="description" content="For ten years, we’ve been perfecting the art of running a “7-Figure Zen” business.
+                                    Here you’ll learn: Who we help, What we do, our Philosophy, Story, and Team members.
+                                    ">
+    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class='container'>
+        <header>
+            <div>
+                <span class='links hide-mobile pull-left'>
+                    <a id='www.newsletter' href="https://www.youtube.com/startherefm?sub_confirmation=1"
+                        target="_blank">YouTube</a>
+                    <span class="gap"></span>
+                    <a href="https://www.bulletproofdeveloper.com/newsletter"
+                        class=''>Newsletter</a>
+                </span>
+                <span>
+                    <a href="https://www.bulletproofdeveloper.com" style="color: #000; font-size: 38px;">Bulletproof Developer</a>
+                </span>
+                <span class='links hide-mobile pull-right'>
+                    <a href="https://www.bulletproofdeveloper.com/about"
+                        class='selected'>About</a>
+                    <span class="gap"></span>
+                    <a href="https://bulletproofdeveloper.com/login">Log in</a>
+                </span>
+            </div>
+            <div class='show-mobile links'>
+                <a href="https://www.youtube.com/startherefm?sub_confirmation=1" target="_blank">YouTube</a>
+                <a class=''
+                    href="https://www.bulletproofdeveloper.com/newsletter">Newsletter</a>
+                <a class='selected'
+                    href="https://www.bulletproofdeveloper.com/about">About</a>
+                <a href="https://bulletproofdeveloper.com/login">Log in</a>
+            </div>
+        </header>
+        <!-- home page -->
+            <main>
+        <div>
+            <div class='title'>
+                About Bulletproof Developer
+            </div>
+            <div class="subtitle">
+                For ten years, we’ve been perfecting the art of running a “7-Figure Zen” business. <br
+                    class="hide-mobile">
+                Here you’ll learn: Who we help, What we do, our Philosophy, Story, and Team members.
+            </div>
+        </div>
+        <div class='text-left'>
+            <div class="text-container">
+                <h1>Who we help</h1>
+                <p>
+                    We help coaches, consultants, course creators, agencies, and experts (basically, anybody who
+                    sells advice). We only work with founders who are experts at their craft, with existing
+                    businesses making at least $10,000 /month. These businesses have all the raw materials necessary
+                    for 7-figure profits but they lack the structures, systems, teams, tools, and guidance on how to
+                    get there.
+
+                </p>
+                <br>
+                <h1>What do we do</h1>
+                <p>We help these founders achieve “7-Figure Zen” — a business that makes $100k+ /month profit, with
+                    1-2 products, 2-3 remote staff, happy clients, and a chill lifestyle. We do this through our two
+                    training programs: <a href="https://go.consulting.com/wetube">Wetube</a> and <a
+                        href="https://www.consulting.com/quantum">Quantum</a> . Our programs aim to
+                    maximize: Profits, client results,
+                    and founder happiness. Our programs aim to minimize: Complexity, costs, headcount, and stress.
+                </p>
+
+                <br>
+                <h1>Our philosophy</h1>
+                <p>"7-Figure Zen" is the perfect balance between profit, client results, and founder happiness. To
+                    achieve this balance, we follow a philosophy built on six core principles:</p>
+                <div class='column-box'>
+                    <div><b>1. Results - </b> client results are the main thing.</div>
+                    <div><b>2. Focus - </b> keep the main thing the main thing.</div>
+                    <div><b>3. Simplicity - </b> do more with less.</div>
+                    <div><b>4. Discipline - </b> freedom comes from discipline.</div>
+                    <div><b>5. Quality - </b> make great things people cherish.</div>
+                    <div><b>6. Joy - </b> if its not fun, you are doing it wrong.</div>
+                </div>
+
+                <br>
+                <h1>Our story</h1>
+                <p><b>Part 1. Solve a problem</b></p>
+                <p>It all started back in 2011 when I (<a href="https://samovens.com" target='_blank'>Sam Ovens</a>) quit my
+                    corporate job to start my
+                    own business
+                    from my parent's garage in New Zealand. I tried building multiple tech companies, but they
+                    failed because nobody needed them. Knowing this, I decided to talk to business owners first and
+                    ask them what their most painful problems were. They told me it was getting new customers. I
+                    started learning everything I could about customer acquisition, and my consulting business was
+                    born. </p>
+
+                <p><b>Part 2. Services don't scale</b></p>
+                <p>I helped local businesses get customers online with good websites, SEO, Adwords, Facebook Ads,
+                    and an email list. My clients got results, I was making money, and it was easy for me to sign on
+                    new clients — the problem was, I couldn’t handle any more work. I had reached the limits of my
+                    energy and time. I hired a team to help me, and we became an “agency,” but it was hard to
+                    deliver quality work, manage the complexity, and turn a decent profit. I realized services don’t
+                    scale.</p>
+
+                <p><b>Part 3. Course/coaching hybrid</b></p>
+                <p>Doing the work for clients didn’t scale, so I thought: “What if I taught them how to do it
+                    instead?”. I created an online course that showed people how to do the things I did for them so
+                    they could get customers for themselves. The content alone wasn’t enough; I had to provide group
+                    coaching and support to keep them motivated and troubleshoot their issues. The new model was a
+                    success; I scaled my consulting business to $300,000 /month, by myself, from home, with 80%
+                    margins.</p>
+
+                <p><b>Part 4. Too much scale</b></p>
+                <p>Eager to see how far I could push things, I hired a team, and we started scaling aggressively.
+                    Within 1-year, we were making $18m /year, and by year-2, we were making $36m /year. I featured
+                    on the Forbes 30 Under 30 list; we had a fancy NYC office, 45 staff, and spent $40k /day on ads.
+                    People started noticing me on the streets. I was semi-famous. But beneath the surface, things
+                    were chaotic, profit margins suffered, I didn’t know my clients, and I started to hate my life.
+                </p>
+
+                <p><b>Part 5. Finding zen</b></p>
+                <p>Tired of putting out endless fires and working 18-hour days, my wife and I moved to LA,
+                    California, and I started simplifying my Frankenstein of a business. The idea was simple: More
+                    with less. We aimed to maximize: profits, client results, and founder happiness — while
+                    simultaneously — minimizing: complexity, costs, headcount, and stress. After two years of
+                    experimentation, we found what we believe is the perfect model. We call it “7-Figure Zen”, we
+                    live it, and we teach it too.</p>
+
+                <br>
+                <h1>Our team</h1>
+                <p>We’re a fully-remote, cross-functional team of six people.</p>
+                <div class="row-box">
+                    <div class="team-box">
+                        <img class='team-photo' src="images/sam.png" alt="Sam Ovens">
+                        <span>
+                            <span class='team-name'>Sam Ovens</span>
+                            <span class="team-title">CEO & Founder</span>
+                            <span class="team-desc">Creates content, helps clients, and leads the business.</span>
+                        </span>
+                    </div>
+
+                    <div class="team-box">
+                        <img class='team-photo' src="images/jesse.png" alt="Sam Ovens">
+                        <span>
+                            <span class='team-name'>Jesse Clark</span>
+                            <span class="team-title">Operations Manager</span>
+                            <span class="team-desc">Manages the day-to-day operations, and helps clients.</span>
+                        </span>
+                    </div>
+
+                    <div class="team-box">
+                        <img class='team-photo' src="images/nick.png" alt="Sam Ovens">
+                        <span>
+                            <span class='team-name'>Nick Hauser</span>
+                            <span class="team-title">Client Success Coach</span>
+                            <span class="team-desc">Onboards, coaches, and holds clients accountable to
+                                results.</span>
+                        </span>
+                    </div>
+
+                    <div class="team-box">
+                        <img class='team-photo' src="images/draey.png" alt="Sam Ovens">
+                        <span>
+                            <span class='team-name'>David Draey</span>
+                            <span class="team-title">Client Success Coach</span>
+                            <span class="team-desc">Onboards, coaches, and holds clients accountable to
+                                results.</span>
+                        </span>
+                    </div>
+
+                    <div class="team-box">
+                        <img class='team-photo' src="images/sid.jpg" alt="Sam Ovens">
+                        <span>
+                            <span class='team-name'>Sid Sahasrabuddhe</span>
+                            <span class="team-title">Community Manager</span>
+                            <span class="team-desc">Manages client communities, and organizes our live
+                                events.</span>
+                        </span>
+                    </div>
+
+                    <div class="team-box">
+                        <img class='team-photo' src="images/james.png" alt="Sam Ovens">
+                        <span>
+                            <span class='team-name'>James Aguis</span>
+                            <span class="team-title">Accountant</span>
+                            <span class="team-desc">Handles bookkeeping, accounting, and finance.</span>
+                        </span>
+                    </div>
+                </div>
+
+                <br>
+                <h1>Contacting us</h1>
+                <p>
+                <p>The best way to contact us is via email - <a href="/cdn-cgi/l/email-protection#384b4d4848574a4c785b57564b4d544c51565f165b5755"><span class="__cf_email__" data-cfemail="71020401011e030531121e1f02041d05181f165f121e1c">[email&#160;protected]</span></a> .</p>
+                <p>You can follow Sam Ovens on <a href="https://www.youtube.com/samovenstv?sub_confirmation=1"
+                        target="_blank">YouTube here</a>.</p>
+                <p>You can <a href="https://www.consulting.com/newsletter">join our Newsletter here</a> to get 3 quality emails
+                    every week from Sam
+                    Ovens
+                    personally.
+                </p>
+                <p style='margin-bottom:100px'>Our Privacy policy, Terms and conditions, and other legal pages are <a
+                        href="https://www.consulting.com/legal/privacy-policy">here.</a> </p>
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+    </div>
+        
+    </body>
+
+</html>
