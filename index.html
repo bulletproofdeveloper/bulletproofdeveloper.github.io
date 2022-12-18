@@ -1,318 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+	
 	<style>
-		body {
-		}
+			html {
+			    margin: 0;
+			    padding: 0;
+			}
 
-		a:link, a:visited {
-		  color: #4c51bf;
-		}
+			body {
+			    text-align: center;
+			    font-family: Roboto;
+			    font-size: 16px;
+			    line-height: 24px;
+			    font-weight: 400;
+			    color: #202124;
+			    margin: 0px;
+			}
 
-		h3 {
-		  font-style: italic;
-		}
+			form {
+			    margin: 0px;
+			    padding: 0px;
+			}
+
+			a {
+			    text-decoration: none;
+			    color: #2E6EF5;
+			    padding: 0px;
+			    margin: 0px;
+			}
+
+			a:hover {
+			    text-decoration: underline;
+			}
+
+			button {
+			    display: inherit;
+			    border: inherit;
+			}
+
+			.no-mp {
+			    margin: 0px;
+			    padding: 0px;
+			}
+
+			.pull-left {
+			    float: left;
+			}
+
+			.pull-right {
+			    float: right;
+			}
+
+			.button-block {
+			    background: #F8D481;
+			    display: block;
+			    color: #202124;
+			    text-align: center;
+			    margin: 5px 16px;
+			    border-radius: 5px;
+			    font-weight: 700;
+			    padding: 12px;
+			    font-size: 16px;
+			    cursor: pointer;
+			}
+
+			button.button-block {
+			    margin: 0px auto;
+			    width: calc(100% - 30px);
+			    height: 48px;
+			}
+
+			input {
+			    color: #202124;
+			}
+
+			input:focus {
+			    border: 1px solid #2E6EF5 !important;
+			    outline: 0px;
+			}
+
+			input::placeholder {
+			    color: #909090 !important;
+			}
+
+			.button-block:hover {
+			    text-decoration: none !important;
+			    background-color: #ECD188;
+			}
+
+			h1 {
+			    font-size: 23px;
+			    line-height: 150%;
+			    font-weight: bold;
+			    margin-bottom: 8px;
+			    margin-top: 8px;
+			    text-transform: lowercase;
+			}
+
+			h1::first-letter {
+			    text-transform: uppercase;
+			}
+
+			/* p{
+			     text-align: justify; 
+			} */
+
+			.text-left {
+			    text-align: left;
+			}
+
+			.text-right {
+			    text-align: right;
+			}
+
+			.text-center {
+			    text-align: center;
+			}
+
+			.team-box {
+			    display: flex;
+			    flex-direction: row;
+			    gap: 10px;
+			    padding-bottom: 24px;
+			}
+
+			.team-photo {
+			    width: 100px;
+			    height: 100px;
+			    border-radius: 50px;
+			}
+
+			.team-name {
+			    display: block;
+			    font-size: 16px;
+			    font-weight: 700;
+			    margin: 0px;
+			    line-height: 18px;
+			}
+
+			.team-title {
+			    display: block;
+			    line-height: 18px;
+			    margin-bottom: 6px;
+			    margin-top: 8px;
+			}
+
+			.team-desc {
+			    font-size: 14px;
+			    font-weight: 400;
+			    font-style: italic;
+			    color: #909090;
+			    line-height: 20px;
+			    display: inline-block;
+			}
+
+			._above {
+			    display: none !important;
+			}
+
+			._has_error {
+			    outline-color: #E74C3C !important;
+			    border-color: #E74C3C !important;
+			}
+
+			._has_no_error {
+			    outline-color: #009E5D !important;
+			    border-color: #009E5D !important;
+			}
+
+			.sam-ovens {
+			    display: block;
+			    width: 120px;
+			    height: 120px;
+			    margin: 58px auto 32px;
+			}
+
+			.consulting-logo {
+			    display: block;
+			    width: 201px;
+			    height: 40px;
+			    margin: 65px auto;
+			}
+
+			.skool-logo {
+			    display: block;
+			    width: 118px;
+			    height: 40px;
+			    margin: 65px auto;
+			}
+
+			.blog-item {
+			    margin-bottom: 56px;
+			    text-align: left;
+			}
+
+			.blog-item img {
+			    display: inline-block;
+			    width: 250px;
+			    height: 137px;
+			    border: 1px solid #202124;
+			}
+
+			.blog-title {
+			    display: block;
+			    font-size: 23px;
+			    font-weight: 700;
+			    color: #2E6EF5;
+			    margin-bottom: 16px;
+			}
+
+			.blog-post-title {
+			    font-size: 39px;
+			    font-weight: 700;
+			    margin-top: 46px;
+			    line-height: 59px;
+			}
+
+			.youtube-container {
+			    margin: 56px auto;
+			    display: flex;
+			    align-items: stretch;
+			}
+
+			.promotion {
+			    margin-right: -16px;
+			    margin-left: -16px;
+			}
+
+			.promotion-title {
+			    font-size: 23px;
+			    line-height: 35px;
+			    font-weight: 700;
+			    margin-bottom: 16px;
+			}
+
+			.transcription-container {
+			    margin-right: -16px;
+			    margin-left: -16px;
+			}
+
+			.transcription {
+			    font-size: 14px;
+			    white-space: pre-wrap;
+			    overflow-y: hidden;
+			    text-overflow: ellipsis;
+			    margin-bottom: 36px;
+			}
+
+			.transcription::-webkit-scrollbar {
+			    width: 4px;
+			}
+
+			.read-more-btn {
+			    background: #F8D481;
+			    padding: 12px 32px;
+			    font-weight: 700;
+			    border-radius: 4px;
+			    color: black;
+			}
+
+			.pagination {
+			    display: flex;
+			    flex-direction: row;
+			    justify-content: space-between;
+			    list-style: none;
+			}
+
+			@media only screen and (min-width:769px) {
+
+			    .well {
+			        background: #F8F7F5;
+			        padding: 24px;
+			        border: 1px solid #e4e4e4;
+			    }
+
+			    .promotion {
+			        /* width:698px; */
+			        margin-left: auto;
+			        margin-right: auto;
+			    }
+
+			    .transcription-container {
+			        /* width: 689px; */
+			        margin-right: auto;
+			        margin-left: auto;
+			    }
+
+			    .transcription {
+			        height: 273px;
+			    }
+
+			    .youtube-container {
+			        height: 391px;
+			    }
+
+			    .show-mobile {
+			        display: none !important;
+			    }
+
+			    .text-container {
+			        width: 698px;
+			        margin: 10px auto;
+			    }
+
+			    .logo {
+			        width: 201px;
+			        height: 40px;
+			        margin-top: -4px;
+			    }
+
+			    .container {
+			        width: 987px;
+			        margin: 0 auto;
+			    }
+
+			    header {
+			        padding-top: 64px;
+			        color: #2E6EF5;
+			        font-size: 16px;
+			        line-height: 24px;
+			    }
+
+			    header .links {
+			        /* width:187px; */
+			        height: 24px;
+			        display: inline-block;
+			        padding: 0;
+			    }
+
+			    .links .gap {
+			        width: 47px;
+			        display: inline-block;
+			    }
+
+			    main .title {
+			        font-size: 39px;
+			        line-height: 58.5px;
+			        margin: 56px auto 24px auto;
+			        font-weight: 700;
+			        width: 800px;
+			        padding: 5px;
+			    }
+
+			    main .subtitle {
+			        font-size: 18px;
+			        line-height: 27px;
+			        margin: 0 auto 56px auto;
+			        font-weight: 500;
+			        width: 698px;
+			        padding: 5px;
+			    }
+
+			    .product-box {
+			        display: inline-block;
+			        width: 333px;
+			        height: 354px;
+			        border-radius: 10px;
+			        border: 1px solid #E4E4E4;
+			        margin-right: 16px;
+			        margin-left: 16px;
+			        box-sizing: border-box;
+			        text-align: center;
+			    }
+
+
+			    .product-box .icon {
+			        /* display:block; */
+			        width: 100px;
+			        height: 100px;
+			        border-radius: 20px;
+			        margin: 32px auto;
+			        font-size: 40px;
+			        line-height: 100px;
+			        font-weight: bold;
+			        color: white;
+			    }
+
+			    .product-box .details {
+			        text-align: left;
+			        color: #202124;
+			        margin: 16px;
+			        font-size: 16px;
+			        line-height: 24px;
+			    }
+
+			    .details .title {
+			        font-size: 20px;
+			        line-height: 30px;
+			        font-weight: 700;
+			        margin: 0px;
+			        padding: 0px;
+			    }
+
+			    .details .desc {
+			        margin-top: 8px;
+			    }
+
+			    .product-box .uplevel {
+			        background-color: #E74C3C;
+			    }
+
+			    .product-box .quantum {
+			        background-color: #2E6EF5;
+			    }
+
+			    .newsletter {
+			        width: 396px !important;
+			        min-height: 216px !important;
+			        height: fit-content;
+			    }
+
+
+			    .newsletter input {
+			        width: calc(100% - 60px);
+			        border-radius: 4px;
+			        border: 1px solid #E4E4E4;
+			        display: block;
+			        margin: 16px 16px;
+			        padding: 14px 14px;
+			        font-size: 16px;
+			        line-height: 24px;
+			    }
+
+			    .newsletter-done {
+			        width: 364px !important;
+			        margin-right: auto;
+			        margin-left: auto;
+			    }
+
+			    .column-box {
+			        display: flex;
+			        width: 100%;
+			        height: 96px;
+			        flex-direction: column;
+			        flex-wrap: wrap;
+			    }
+
+			    .column-box>* {
+			        width: 50%;
+			        line-height: 32px;
+			    }
+
+			    .row-box {
+			        display: flex;
+			        width: 100%;
+			        flex-direction: row;
+			        flex-wrap: wrap;
+			    }
+
+			    .row-box>div {
+			        width: 50%;
+			        line-height: 32px;
+			    }
+
+			    .uplevel-hero {
+			        width: 900px;
+			        margin-bottom: 48px;
+			    }
+
+			    .uplevel-member {
+			        width: 769px;
+			        margin-bottom: 16px;
+			        border: 2px solid #202124;
+			    }
+
+			    .uplevel-member.last {
+			        margin-bottom: 48px !important;
+			    }
+
+			    .quantum-hero {
+			        width: 769px;
+			        margin-bottom: 48px;
+			        border: 2px solid #202124;
+			    }
+
+			    .quantum-member {
+			        width: 769px;
+			        border: 2px solid #202124;
+			        margin-bottom: 48px;
+			    }
+
+			    .legal-links {
+			        width: 881px;
+			        height: 24px;
+			        padding: 0;
+			        margin: 40px auto;
+			        /* margin-bottom: 30px; */
+			        display: flex;
+			        flex-direction: row;
+			        justify-content: space-between;
+			        align-content: center;
+			    }
+
+			    .links .selected,
+			    .legal-links .selected {
+			        color: #202124;
+			    }
+
+			    .coach {
+			        display: inline-block;
+			        margin-right: 56px;
+			        margin-bottom: 56px;
+			    }
+
+			    .coach.last {
+			        margin-right: 0px !important;
+			    }
+
+			    .coach img {
+			        width: 100px;
+			        height: 100px;
+			        display: block;
+			    }
+
+			    .coach .name {
+			        margin-top: 16px;
+			        font-weight: 700;
+			    }
+
+			    .blog-item {
+			        display: flex;
+			        flex-direction: row;
+			        justify-content: space-between;
+			    }
+			}
+
+			@media only screen and (max-width: 768px) {
+
+			    .well {
+			        background: #F8F7F5;
+			        padding: 17px;
+			        border: 1px solid #e4e4e4;
+			    }
+
+			    .transcription-container {
+			        padding-bottom: 20px;
+
+			    }
+
+			    .transcription {
+			        height: 144px;
+			    }
+
+			    .youtube-container {
+			        aspect-ratio: 698/391;
+			    }
+
+			    .hide-mobile {
+			        display: none !important;
+			    }
+
+			    header {
+			        color: #2E6EF5;
+			        padding-top: 24px;
+			    }
+
+			    .text-container {
+			        padding: 5px 16px;
+			        margin: 10px auto;
+			    }
+
+			    .logo {
+			        width: 159px;
+			        height: 32px;
+			        margin-bottom: 20px;
+			    }
+
+			    header .links {
+			        height: px;
+			        padding: 0;
+			    }
+
+			    header a {
+			        padding: 5px 10px;
+			    }
+
+			    main .title {
+			        font-size: 33px;
+			        line-height: 49.5px;
+			        margin: 32px auto 0px auto;
+			        font-weight: 700;
+			        /* padding:20px; */
+			        padding-bottom: 0px;
+			    }
+
+			    main .subtitle {
+			        font-size: 18px;
+			        line-height: 27px;
+			        margin: 0 auto 0px auto;
+			        font-weight: 500;
+			        padding: 15px;
+			    }
+
+			    .product-box {
+			        display: inline-block;
+			        width: 100%;
+			        height: 354px;
+			        /* border-radius: 10px; */
+			        outline: 1px solid #E4E4E4;
+			        /* margin-right:5px;
+			        margin-left:5px; */
+			        margin-bottom: 32px;
+			        box-sizing: border-box;
+			        text-align: center;
+			    }
+
+
+			    .product-box .icon {
+			        /* display:block; */
+			        width: 100px;
+			        height: 100px;
+			        border-radius: 20px;
+			        margin: 32px auto;
+			        font-size: 40px;
+			        line-height: 100px;
+			        font-weight: bold;
+			        color: white;
+			    }
+
+			    .product-box .details {
+			        text-align: left;
+			        color: #202124;
+			        margin: 16px;
+			        font-size: 16px;
+			        line-height: 24px;
+			    }
+
+			    .details .title {
+			        font-size: 20px;
+			        line-height: 30px;
+			        font-weight: 700;
+			        margin: 0px;
+			        padding: 0px;
+			    }
+
+			    .details .desc {
+			        margin-top: 8px;
+			    }
+
+			    .product-box .uplevel {
+			        background-color: #E74C3C;
+			    }
+
+			    .product-box .quantum {
+			        background-color: #2E6EF5;
+			    }
+
+			    .newsletter {
+			        margin-right: auto !important;
+			        margin-left: auto !important;
+			        width: 99% !important;
+			        height: auto !important;
+			        border: 0px !important;
+			        outline: 0px !important;
+			    }
+
+
+			    .newsletter input {
+			        width: calc(100% - 60px);
+			        /* height: 52px;                */
+			        border-radius: 4px;
+			        border: 1px solid #E4E4E4;
+			        display: block;
+			        margin: 16px 16px;
+			        padding: 14px 14px;
+			        font-size: 16px;
+			        line-height: 24px;
+			    }
+
+			    .newsletter-done {
+			        width: 85% !important;
+			        margin-right: auto;
+			        margin-left: auto;
+			    }
+
+			    .uplevel-hero {
+			        width: 90%;
+			    }
+
+			    .uplevel-member {
+			        width: 90%;
+			        margin-bottom: 10px;
+			        border: 2px solid #202124;
+			    }
+
+			    .quantum-hero {
+			        width: 90%;
+			        border: 2px solid #202124;
+			    }
+
+			    .quantum-member {
+			        width: 90%;
+			        margin-bottom: 10px;
+			        border: 2px solid #202124;
+			    }
+
+			    .legal-links {
+			        padding: 0;
+			        margin: 20px auto;
+			        /* display:flex;
+			        flex-direction: row;        
+			        flex-wrap: wrap;  
+			        gap:15px;       */
+			    }
+
+			    .legal-links a {
+			        width: fit-content;
+			        padding: 2px 15px;
+			    }
+
+			    .links .selected,
+			    .legal-links .selected {
+			        color: #202124;
+			    }
+
+			    .page-bottom-margin {
+			        margin-bottom: 100px;
+			    }
+
+			    .coach {
+			        display: block;
+			        margin-top: 24px;
+			    }
+
+			    .coach.last {
+			        margin-bottom: 32px !important;
+			    }
+
+			    .coach img {
+			        width: 100px;
+			        height: 100px;
+			        display: inline;
+			    }
+
+			    .coach .name {
+			        margin-top: 16px;
+			        font-weight: 700;
+			    }
+			}
 		</style>
-    <title>Dain Miller - Software Product Strategy, Demand-Side Strategy, Shaping, Design</title>
-    <link rel="stylesheet" media="all" href="style.css">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <script defer data-domain="feltpresence.com" src="https://plausible.io/js/plausible.js"></script>
+		
+    <base href="https://www.bulletproofdeveloper.com/" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Development.com: Make money with programming.</title>
+    <meta name="description"
+        content="We help programmers, engineers, and developers achieve a mid-6 figure salary - $250k+ /year, build a world-class career, & then become a 6-figure freelancer.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <div class="font-serif max-w-5xl mx-auto p-8">
-
-        <h1 class="font-sans font-bold mb-8">BULLETPROOF DEVELOPER</h1>
-        <h1 class="font-sans font-light uppercase">Dain Miller</h1>
-        <p class="text-sm">Product Developer, Advisor, Builder</p>
-
-
-<div class="mt-8 mb-4 pt-4 pb-6 border-t border-b border-gray-300">
-<div class="grid md:grid-cols-3 gap-4">
-<div class="md:col-span-2 md:pr-8">
-<div class="font-sans font-light uppercase mb-4">Developer Roadmap<span class="font-sans inline-block bg-yellow-300 text-xs px-1 rounded-md uppercase ml-1">New</span></div>
-
-  <div class="relative" style="padding-top: 56.25%">
-    <iframe src="https://www.youtube.com/embed/1323L7oVl2c" class="absolute inset-0 w-full h-full" frameborder="0" â€¦></iframe>
-  </div>
-
-  <p class="text-sm mt-2 italic">The key steps to becoming a Software Developer in under 20 minutes</p>
-
-</div>
-<div class="md:ml-4 pt-4 md:pt-0 border-t border-gray-300 md:border-0">
-  <div class="font-sans font-light uppercase mb-4">Shaping in Real Life <span class="font-sans inline-block bg-yellow-300 text-xs px-1 rounded-md uppercase ml-1">New</span></div>
-  <p>My new intensive video course teaches you to build a product process with the principles of Shape Up. Learn to diagnose your team's specific challenges and apply new techniques one-by-one.</p>
-  <p class="my-1"><a href="srl/">More about Shaping in Real Life &raquo;</a></p>
-  <hr class="my-4 border-gray-300"/>
-  <div class="font-sans font-light uppercase mb-4">Get The Book</div>
-  <a href="http://basecamp.com/shapeup"><img src="https://feltpresence.com/images/shapeup-cover.svg" class="w-1/6 md:w-1/4 float-left mr-4" /></a>
-  <p><a href="http://basecamp.com/shapeup">Shape Up: Stop Running in Circles and Ship Work that Matters</a></p>
-</div>
-</div>
-</div>
-
-        <div class="grid md:grid-cols-3 gap-4 md:divide-x md:divide-gray-300">
-            <div class="divide-y divide-gray-300">
-                <div class="mb-4">
-
-                    <h2 class="font-sans font-light uppercase mb-4">My Experience</h2>
-
-                    <p class="my-4">I've worked on all levels of the software stack, from defining strategy to shaping projects to designing interfaces to writing code to marketing.</p>
-                    <p class="my-4">In 2003 I was on the team of three at 37signals that created Basecamp and deeply influenced the early software-as-a-service industry. Over 17 years, I designed features used by millions and invented processes our teams used to design, develop and ship software. Always looking to understand the bigger picture, my role evolved from UI Designer to Product Manager to Head of Strategy.</p>
-                    <p>At each step, I had to solve problems in a new field using methods that aren't taught in schools. This led me to acquire a unique toolkit of research and strategy tools to "see in the dark" when no one else knew where to go.</p>
-                    <p class="my-4">My expertise lies in the zone between the demand and the supply side. I figure out what potential customers are struggling to do, map that to technical expertise, then shape a product concept that teams can implement.</p>
-                    <p class="my-4">
-                        In 2019, I wrote a book about managing software development:
-                        <a class="" href="http://basecamp.com/shapeup">Shape Up: Stop Running in Circles and Ship Work that Matters</a>. Widely read by leaders in the industry, Shape Up changed the way many software teams talk about shaping projects, making bets, and targeting unknowns.
-                    </p>
-
-                </div>
-                <div>
-
-                    <h2 class="font-sans font-light uppercase my-4">Influences</h2>
-
-                    <p class="my-4">I've been mentored by the best of the best.</p>
-
-                    <p class="my-4">
-                        <a class="" href="https://www.linkedin.com/in/jason-fried/">Jason Fried</a>
-                         honed my intuition for product design through years of working side-by-side. He challenged me to simplify and eliminate until I constantly made choices about what mattered: what to elevate and what to push back, what to include and what to leave out.
-                    </p>
-
-                    <p class="my-4">
-                        <a class="" href="http://twitter.com/dhh">David Heinemeier Hansson</a>
-                         and Basecamp's early core of programmers schooled me in software design practices, especially the art of separating concerns and designing code to be read by the human over the computer. I learned to program in the tradition of people they looked up to, like Kent Beck, Martin Fowler and the Pragmatic Programmers.
-                    </p>
-
-                    <p class="my-4">
-                        <a class="" href="https://www.linkedin.com/in/bobmoesta/">Bob Moesta</a>, co-creator of the Jobs To Be Done framework with Clayton Christensen, personally trained me in demand-side interview methods, demand-side research and system design techniques. I consider myself lucky to have received insights passed down to him from one of his mentors, Genichi Taguchi, on the role of function and variability in the design of systems and quality measures.
-                    </p>
-
-                </div>
-
-            </div>
+    <div class='container'>
+        <header>
             <div>
-                <div class="md:pl-4">
-                    <h2 class="font-sans font-light uppercase mb-4">Current Work</h2>
-
-                    <p class="my-4">I'm currently working with a small team to invent the next generation of creative and planning tools for the early stages of software projects.</p>
-                    <p class="my-4"> I reserve a limited amount of time to advise leaders of software teams on product development. I usually hear from them when they're growing and their product development process is slowing down or getting stuck.</p>
-                    <p class="my-4">I like helping people articulate their problems. Feel welcome to reach out even if you don't yet have a clear question in mind.</p>
-                    <p class="my-4">My email address is <a class="" href="mailto:rjs@hey.com">rjs@hey.com</a>.</p>
-
-                </div>
-
+                <span class='links hide-mobile pull-left'>
+                    <a id='www.newsletter' href="https://www.youtube.com/startherefm?sub_confirmation=1"
+                        target="_blank">YouTube</a>
+                    <span class="gap"></span>
+                    <a href="https://www.bulletproofdeveloper.com/newsletter"
+                        class=''>Newsletter</a>
+                </span>
+                <span>
+                    <a href="https://www.bulletproofdeveloper.com" style="color: #000; font-size: 38px;">Development.com</a>
+                </span>
+                <span class='links hide-mobile pull-right'>
+                    <a href="https://www.bulletproofdeveloper.com/about"
+                        class=''>About</a>
+                    <span class="gap"></span>
+                    <a href="https://app.bulletproofdeveloper.com/login/">Log in</a>
+                </span>
             </div>
-            <div>
-                <div class="md:pl-4">
-
-<!--
-                    <h2 class="text-base font-sans font-light uppercase mb-4">Upcoming Workshop</h2>
-
-                    <ul class="list-disc list-outside ml-5 mb-4">
-                        <li><a href="handoff">The Confident Handoff</a>, Nov 22-23 (Remote)</li>
-                      </ul>
-                      -->
-
-
-                    <h3 class="mb-2">Newsletter</h3>
-
-                    <ul class="list-disc list-outside ml-5">
-                        <li>
-                            You'll find my latest articles at
-                            <a class="" href="https://world.hey.com/rjs">world.hey.com/rjs</a>
-                        </li>
-                    </ul>
-
-                    <h3 class="mt-6 mb-2">Selected Articles</h3>
-                    <ul class="list-disc list-outside ml-5">
-                        <li>
-                            <a href="https://world.hey.com/rjs/20-framing-2f64ddca">Framing&nbsp;&starf;</a>
-                            <span class="font-sans text-xs">2022</span>
-                        </li>
-                        <li>
-                            <a href="https://world.hey.com/rjs/15-systemizing-kick-off-c05bbbf2">Systemizing Kick-Off&nbsp;&starf;</a>
-                            <span class="font-sans text-xs">2021</span>
-                        </li>
-                        <li>
-                            <a href="https://world.hey.com/rjs/11-research-gives-us-the-problem-not-the-answer-d8a2303e">Research Gives Us the Problem, Not the Solution&nbsp;&starf;</a>
-                            <span class="font-sans text-xs">2021</span>
-                        </li>
-                        <li>
-                            <a href="https://m.signalvnoise.com/keep-digging/">Keep Digging</a>.
-                            <span class="font-sans text-xs">2020</span>
-                        </li>
-                        <li>
-                            <a href="https://m.signalvnoise.com/how-i-wrote-shape-up/">How I Wrote Shape Up</a>.
-                            <span class="font-sans text-xs">2019</span>
-                        </li>
-                        <!-- li>
-                            <a href="https://m.signalvnoise.com/the-place-of-ux/">The Place of UX</a>.
-                            <span class="font-sans text-xs">2019</span>
-                        </li -->
-                        <li>
-                            <a href="analytics.html">Longitudinal Usage Analytics</a>.
-                            <span class="font-sans text-xs">2018</span>
-                        </li>
-                        <li>
-                            <a href="https://m.signalvnoise.com/real-work-vs-imaginary-work-8bdb84a7d1da">Real Work vs. Imaginary Work</a>.
-                            <span class="font-sans text-xs">2018</span>
-                        </li>
-                        <li>
-                            <a href="http://feltpresence.com/functions.html">Products Are Functions&nbsp;&starf;</a>
-                            <span class="font-sans text-xs">2018</span>
-                        </li>
-                        <li>
-                            <a href="https://m.signalvnoise.com/position-position-position-34b510a28ddc#.c52p6x2pl">Position, Position, Position!</a>. <span class="font-sans text-xs">2017</span>
-                        </li>
-                        <li>
-                            <a href="https://m.signalvnoise.com/the-fidelity-curve-weighing-the-costs-and-benefits-of-interface-design-mockups-b259634807e2#.la7fqiypi">The Fidelity Curve</a>.
-                            <span class="font-sans text-xs">2016</span>
-                        </li>
-                        <li>
-                            <a href="https://medium.com/@rjs/what-ui-really-is-and-how-ux-confuses-matters-8b848cafaa88">What UI Really Is (and How UX Confuses Matters)</a>.
-                            <span class="font-sans text-xs">2013</span>
-                        </li>
-                        <li>
-                            <a href="https://medium.com/@rjs/managing-product-development-by-integrating-around-concerns-77640bcde28d">Managing Product Development by Integrating Around Concerns&nbsp;&starf;</a>
-                            <span class="font-sans text-xs">2012</span>
-                        </li>
-                        <li>
-                            <a href="https://medium.com/@rjs/ui-and-capability-f713c9828c02?s=18-ui-and-capability">UI and Capability</a>.
-                            <span class="font-sans text-xs">2012</span>
-                        </li>
-                        <li>
-                            <a href="http://37signals.com/svn/posts/1926-a-shorthand-for-designing-ui-flows">A Shorthand for Designing UI Flows</a>.
-                            <span class="font-sans text-xs">2009</span>
-                        </li>
-                    </ul>
-
-                    <!--
-                          <h2 class="mt-6 mb-2">Mentioned in</h2>
-                          <ul class="list-disc list-outside ml-5">
-                            <li>Alexander Adamou, Yonatan Berman, Diomides Mavroyiannis, Ole Peters. <a href="https://www.researchers.one/article/2019-10-7">Microfoundations of Discounting</a>. 2019</li>
-                            <li>Ethan Bernstein, Jesse Shore, David Lazer. <a href="https://sloanreview.mit.edu/article/improving-the-rhythm-of-your-collaboration/">Improving the Rhythm of Your Collaboration</a>. <i>MIT Sloan Management Review</i>. 2019</li>
-                          </ul>
-
-                          -->
-
-                    <h3 class="mt-6 mb-2">On Christopher Alexander</h3>
-                    <ul class="list-disc list-outside ml-5">
-                        <li>
-                            <a href="https://vimeo.com/491222729">Christopher Alexander: A Primer&nbsp;&starf;</a> Live video lecture.
-                            <span class="font-sans text-xs">2020</span>
-                        </li>
-                    </ul>
-
-                    <h3 class="mt-6 mb-2">Podcast Series</h3>
-                    <ul class="list-disc list-outside ml-5">
-                        <li>
-                            <a href="https://synthetic.transistor.fm/episodes">Synthetic A Priori</a>.
-                            <span class="font-sans text-xs">2020</span>
-                        </li>
-                        <li>
-                            <a href="https://demandthinking.com/all-episodes">Demand Thinking</a>.
-                            <span class="font-sans text-xs">2017-2019</span>
-                        </li>
-                    </ul>
-
-
-                    <h3 class="mt-6 mb-2">Selected Videos</h3>
-                    <ul class="list-disc list-outside ml-5">
-                        <li>
-                            <a href="https://youtu.be/h_8M23wVjXk">Shaping in a Nutshell</a>. 20-minute overview of Shape Up.
-                            <span class="font-sans text-xs">2022</span>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/watch?v=jnW0fAIpLbo&list=PLAsKzbz1YBdnvhJzwqEsmUrX7YXZxNqdY">Fintech Devcon, Denver</a>. Conference Talk.
-                            <span class="font-sans text-xs">2022</span>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/watch?v=anDSoLKtHyo">How to Shape Up Client Work</a>. With Bruce van Zyl.
-                            <span class="font-sans text-xs">2021</span>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/watch?v=qkJJ9v4eryM">Q&amp;A with Adam Wathan</a>.
-                            <span class="font-sans text-xs">2020</span>
-                        </li>
-                        <li>
-                            <a href="https://lab.bydesignconf.com/before-designing-a-solution-make-sure-you-found-the-real-problem/">By Design, Bratislava</a>. Conference talk.
-                            <span class="font-sans text-xs">2018</span>
-                        </li>
-                        <li>
-                            <a href="https://vimeo.com/133046716">Mind the Product, San Francisco</a>. Conference talk.
-                            <span class="font-sans text-xs">2015</span>
-                        </li>
-                        <li>
-                            <a href="https://vimeo.com/10875362">Designing With Forces</a>. Lecture at the School of Visual Arts, New York City.
-                            <span class="font-sans text-xs">2010</span>
-                        </li>
-                        <li>
-                            <a href="https://vimeo.com/15772341">Future of Web Apps, London</a>. Conference talk.
-                            <span class="font-sans text-xs">2010</span>
-                        </li>
-                    </ul>
-
-                    <h3 class="mt-6 mb-2">Selected Podcast Appearances</h3>
-                    <ul class="list-disc list-outside ml-5">
-                        <li>
-                            <a href="https://changelog.com/podcast/399">The Changelog</a>
-                            <span class="font-sans text-xs">2020</span>
-                        </li>
-                        <li>
-                            <a href="https://www.perell.com/podcast/ryan-singer-design-and-consciousness">David Perell: North Star Podcast</a>
-                            <span class="font-sans text-xs">2020</span>
-                        </li>
-                        <li>
-                            <a href="https://productcraft.com/podcast/product-love-podcast-ryan-singer-head-of-strategy-at-basecamp-and-author-of-shape-up/">Product Love</a>
-                            <span class="font-sans text-xs">2020</span>
-                        </li>
-                        <li>
-                            <a href="https://www.brightandearlypodcast.com/19">Bright &amp; Early</a>
-                            <span class="font-sans text-xs">2019</span>
-                        </li>
-                        <li>
-                            <a href="https://build.transistor.fm/33">Build with Maggie Crowley</a>
-                            <span class="font-sans text-xs">2019</span>
-                        </li>
-                        <li>
-                            <a href="https://changelog.com/podcast/357">The Changelog</a>
-                            <span class="font-sans text-xs">2019</span>
-                        </li>
-                        <li>
-                            <a href="https://www.mindtheproduct.com/shape-up-ryan-singer-on-the-product-experience/">The Product Experience</a>
-                            <span class="font-sans text-xs">2019</span>
-                        </li>
-                        <li class="bullet-item">
-                            <a href="https://product-hunt-radio.simplecast.com/episodes/how-to-ship-work-that-matters-with-basecamps-ryan-singer-poLCy_bD?ref=podhunt">Product Hunt Radio</a>
-                            <span class="font-sans text-xs">2019</span>
-                        </li>
-                        <li>
-                            <a href="https://rework.fm/shape-up/">Rework</a>
-                            <span class="font-sans text-xs">2019</span>
-                        </li>
-                        <li>
-                            <a href="https://productcraft.com/podcast/product-love-podcast-ryan-singer-basecamp/?utm_source=bambu&utm_medium=social&utm_campaign=advocacy">Product Love</a>
-                            <span class="font-sans text-xs">2018</span>
-                        </li>
-                        <li>
-                            <a href="http://www.human-current.com/episode-095-answering-hard-questions">HumanCurrent</a>
-                            <span class="font-sans text-xs">2018</span>
-                        </li>
-                        <li>
-                            <a href="https://www.laroche.fm/home/ryan-singer-basecamp">Laroche.fm</a>
-                            <span class="font-sans text-xs">2018</span>
-                        </li>
-                    </ul>
-
-                </div>
+            <div class='show-mobile links'>
+                <a href="https://www.youtube.com/startherefm?sub_confirmation=1" target="_blank">YouTube</a>
+                <a class=''
+                    href="https://www.bulletproofdeveloper.com/newsletter">Newsletter</a>
+                <a class=''
+                    href="https://www.bulletproofdeveloper.com/about">About</a>
+                <abbr href="https://bulletproofdeveloper.com/logine">Log in</a>
+            </div>
+        </header>
+        <!-- home page -->
+            <main>
+        <div>
+            <div class='title'>
+                <!-- How to make $100k /month profit helping people
+                solve their problems online -->
+				How to make $250k+ /year helping tech companies 
+				build their products and apps
+            </div>
+            <div class="subtitle">
+				We help programmers, engineers, and developers achieve a mid-6 figure salary - $250k+ /year,
+				build a world-class career, & then become a 6-figure freelancer.
             </div>
         </div>
+        <div>
+            <span class='product-box'>
+                <div class='icon uplevel'>
+                    <span class="text">DA</span>
+                </div>
+                <div class="details">
+                    <span class="title">DCAP</span>
+                    <p class='desc'>Development Career Accelerator Program is an online course to help you go from 0 - 6-figure developer within 90 days.
+					</p>
+                </div>
+                <a href="https://bulletproofdeveloper.com/dcap" class='button-block'>LEARN MORE</a>
+            </span>
+            <span class='product-box page-bottom-margin'>
+                <div class='icon quantum'>
+                    <span class="text">FU</span>
+                </div>
+                <div class="details">
+                    <span class="title">FreeUP</span>
+                    <p class='desc'>FreeUP is a cohort based online course that helps people go from developers to 6 figure freelancers within 90 days.</p>
+                </div>
+                <a href="https://www.bulletproofdeveloper.com/freeup" class='button-block'>LEARN MORE</a>
+            </span>
+        </div>
+    </main>
     </div>
+        
+    </body>
 
-</body>
 </html>
-
